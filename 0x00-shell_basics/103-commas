@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(ls -m | sed 's/,$//') | sed "s/^/., .., /"
+ls -1a | sed -e 's/\(.*\)/\1\//' | sort -d -f -k 1.1,1.1 | tr '\n' ','; echo ""
